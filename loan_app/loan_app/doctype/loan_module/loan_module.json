@@ -1,0 +1,183 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2025-08-24 13:22:39.126718",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_5esw",
+  "naming_series",
+  "loan_name",
+  "loan_number",
+  "bank",
+  "type_of_loan",
+  "interest_rate",
+  "column_break_cfzh",
+  "date",
+  "limit",
+  "purpose",
+  "details_section",
+  "sanction_amount",
+  "disbursement_amount",
+  "paid_amount",
+  "remaining_amount",
+  "column_break_oryn",
+  "disbursement_details_tab",
+  "disbursement",
+  "payment_details_tab",
+  "payment_details",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_5esw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "loan_name",
+   "fieldtype": "Data",
+   "label": "Loan Name"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "L-.YYYY.-"
+  },
+  {
+   "fieldname": "loan_number",
+   "fieldtype": "Data",
+   "label": "Loan Number"
+  },
+  {
+   "fieldname": "bank",
+   "fieldtype": "Link",
+   "label": "Bank",
+   "options": "Bank"
+  },
+  {
+   "fieldname": "type_of_loan",
+   "fieldtype": "Select",
+   "label": "Type of Loan",
+   "options": "\nWorking Capital Loan\nTR Loan\nHP Loan"
+  },
+  {
+   "fieldname": "interest_rate",
+   "fieldtype": "Percent",
+   "label": "Interest Rate (%)"
+  },
+  {
+   "fieldname": "column_break_cfzh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "limit",
+   "fieldtype": "Float",
+   "label": "Limit"
+  },
+  {
+   "fieldname": "purpose",
+   "fieldtype": "Small Text",
+   "label": "Purpose"
+  },
+  {
+   "fieldname": "column_break_oryn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "disbursement_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Disbursement Details "
+  },
+  {
+   "fieldname": "disbursement",
+   "fieldtype": "Table",
+   "label": "Disbursement ",
+   "options": "Disbursement"
+  },
+  {
+   "fieldname": "payment_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Payment Details"
+  },
+  {
+   "fieldname": "payment_details",
+   "fieldtype": "Table",
+   "label": "Payment Details",
+   "options": "Payment Details"
+  },
+  {
+   "fieldname": "details_section",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "sanction_amount",
+   "fieldtype": "Currency",
+   "label": "Sanction Amount"
+  },
+  {
+   "fieldname": "disbursement_amount",
+   "fieldtype": "Currency",
+   "label": "Disbursement Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "paid_amount",
+   "fieldtype": "Currency",
+   "label": "Paid Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "remaining_amount",
+   "fieldtype": "Currency",
+   "label": "Remaining Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Loan Module",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-08-27 15:56:40.045431",
+ "modified_by": "Administrator",
+ "module": "Loan App",
+ "name": "Loan Module",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
