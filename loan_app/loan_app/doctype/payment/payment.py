@@ -13,7 +13,17 @@ class Payment(Document):
             frappe.throw("Loan reference is missing")
 
         loan_doc = frappe.get_doc("Loan Module", self.loan)
-        loan_doc.paid_amount += self.total_paid_amount
+
+
+        # Calculate new paid amount
+        new_paid_amount = (loan_doc.paid_amount or 0) + self.total_paid_amount
+
+        # Validation: Prevent overpayment
+        if new_paid_amount > (loan_doc.disbursement_amount or 0):
+            frappe.throw("Payment exceeds loan disbursement amount.")
+
+
+        loan_doc.paid_amount = new_paid_amount
         loan_doc.remaining_amount = (loan_doc.disbursement_amount or 0) - loan_doc.paid_amount
 
         for p in self.payment_details:
@@ -28,3 +38,5 @@ class Payment(Document):
       
         loan_doc.flags.ignore_validate_update_after_submit = True
         loan_doc.save(ignore_permissions=True)
+
+

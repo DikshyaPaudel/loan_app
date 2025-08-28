@@ -8,6 +8,12 @@ frappe.ui.form.on("Disbursement Details", {
                 custom_loan_module_no: frm.doc.loan
             });
         });
+
+		if(frm.doc.disbursement && frm.doc.disbursement.length > 0) {
+			frm.doc.disbursement.forEach(row => {
+				calculate_total_amount(frm, row.doctype, row.name);
+			});
+		}
 	},
 });
 

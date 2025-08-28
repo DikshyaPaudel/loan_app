@@ -23,3 +23,5 @@ frappe.ui.form.on("Loan Module", {
         }, __('Actions'));
     }
     });
+
+

@@ -8,8 +8,15 @@ frappe.ui.form.on("Payment", {
                 custom_loan_module_no: frm.doc.loan
             });
         });
+
+        if(frm.doc.payment_details && frm.doc.payment_details.length > 0) {
+            frm.doc.payment_details.forEach(row => {
+                calculate_total_payment(frm, row.doctype, row.name);
+            });
+        }
     }
 });
+
 frappe.ui.form.on("Payment Details", {
     principal: function(frm, cdt, cdn) {
         calculate_total_payment(frm, cdt, cdn);
